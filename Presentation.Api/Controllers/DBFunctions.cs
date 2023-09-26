@@ -1,4 +1,5 @@
 using CleanArchitectureWorkshop.Domain.Core;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureWorkshop.Presentation.Api.Controllers;
@@ -40,6 +41,13 @@ public static class Functions
             returnValue += " --- ";
         }
         return returnValue;
+    }
+
+    public static BooksContext createDatabase()
+    {
+        BooksContext db = new BooksContext();
+        db.Database.EnsureCreated();
+        return db;
     }
 }
 

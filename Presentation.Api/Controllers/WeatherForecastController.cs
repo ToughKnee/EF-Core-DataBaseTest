@@ -22,9 +22,14 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<string> Get()
     {
-        var authors = Functions.createFakeData();
+        var db = Functions.createDatabase();
+        // var authors = Functions.createFakeData();
+        List<Author> authors = db.Authors.ToList<Author>();
         var returnValue = new List<string>();
         authors.ForEach(a => returnValue.Add(a.ToString() + " works " + Functions.BooksToString(a.Books)));
+        // db.Authors.AddRange(authors);
+        // db.SaveChanges();
+        db.Dispose();
         return returnValue.AsEnumerable();
     }
 
