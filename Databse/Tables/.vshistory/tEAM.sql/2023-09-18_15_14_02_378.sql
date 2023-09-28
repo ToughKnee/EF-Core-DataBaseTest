@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[tEAM]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
