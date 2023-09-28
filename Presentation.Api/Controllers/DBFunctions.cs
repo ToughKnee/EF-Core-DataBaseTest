@@ -24,9 +24,9 @@ public static class Functions
             {
                 Name = "CCC", Books = new List<Book>
                 {
-                    new Book {Title = "C", PublicationYear = 981},
-                    new Book {Title = "C++", PublicationYear = 30021},
-                    new Book {Title = "C#", PublicationYear = 3200}
+                    new Book {Title = "feat2", PublicationYear = 981},
+                    new Book {Title = "feat2", PublicationYear = 30021},
+                    new Book {Title = "feat2", PublicationYear = 3200}
                 }
             }
         };
