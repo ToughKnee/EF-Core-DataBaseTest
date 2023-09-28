@@ -14,9 +14,9 @@ public static class Functions
             {
                 Name = "AAA", Books = new List<Book>
                 {
-                    new Book {Title = "feat 1", PublicationYear = 121},
-                    new Book {Title = "feat 1", PublicationYear = 2219},
-                    new Book {Title = "feat 1", PublicationYear = 22},
+                    new Book {Title = "CONFLICT", PublicationYear = 121},
+                    new Book {Title = "CONFLICT", PublicationYear = 2219},
+                    new Book {Title = "CONFLICT", PublicationYear = 22},
                     new Book {Title = "A feat 1", PublicationYear = 31}
                 }
             },
@@ -24,8 +24,8 @@ public static class Functions
             {
                 Name = "CCC", Books = new List<Book>
                 {
-                    new Book {Title = "feat2", PublicationYear = 981},
-                    new Book {Title = "feat2", PublicationYear = 30021},
+                    new Book {Title = "CONFLICT", PublicationYear = 981},
+                    new Book {Title = "CONFLICT", PublicationYear = 30021},
                     new Book {Title = "feat2", PublicationYear = 3200}
                 }
             }
