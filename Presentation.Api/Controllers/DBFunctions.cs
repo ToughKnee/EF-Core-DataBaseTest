@@ -16,6 +16,7 @@ public static class Functions
                 {
                     new Book {Title = "AAAAAAAAA", PublicationYear = 1821},
                     new Book {Title = "master conflict", PublicationYear = 219},
+                    new Book {Title = "Conflict 2", PublicationYear = 2},
                     new Book {Title = "A Dub", PublicationYear = 1}
                 }
             },
@@ -24,7 +25,7 @@ public static class Functions
                 Name = "CCC", Books = new List<Book>
                 {
                     new Book {Title = "C", PublicationYear = 981},
-                    new Book {Title = "C++", PublicationYear = 2000},
+                    new Book {Title = "C++", PublicationYear = 30021},
                     new Book {Title = "C#", PublicationYear = 3200}
                 }
             }
