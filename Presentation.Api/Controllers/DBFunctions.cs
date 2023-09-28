@@ -35,11 +35,11 @@ public static class Functions
 
     public static string BooksToString(ICollection<Book> books)
     {
-        string returnValue = "";
+        string returnValue = "feat3";
         foreach(Book book in books)
         {
             returnValue += book.ToString();
-            returnValue += " FFFFFFFFFFFFF ";
+            returnValue += "feat3";
             returnValue += " No conflict ";
         }
         return returnValue;
