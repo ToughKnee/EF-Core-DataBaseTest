@@ -14,10 +14,10 @@ public static class Functions
             {
                 Name = "AAA", Books = new List<Book>
                 {
-                    new Book {Title = "AAAAAAAAA", PublicationYear = 1821},
-                    new Book {Title = "master conflict", PublicationYear = 219},
-                    new Book {Title = "Conflict 2", PublicationYear = 2},
-                    new Book {Title = "A Dub", PublicationYear = 1}
+                    new Book {Title = "feat 1", PublicationYear = 121},
+                    new Book {Title = "feat 1", PublicationYear = 2219},
+                    new Book {Title = "feat 1", PublicationYear = 22},
+                    new Book {Title = "A feat 1", PublicationYear = 31}
                 }
             },
             new Author
