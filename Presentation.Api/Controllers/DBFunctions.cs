@@ -38,7 +38,8 @@ public static class Functions
         foreach(Book book in books)
         {
             returnValue += book.ToString();
-            returnValue += " --- ";
+            returnValue += " FFFFFFFFFFFFF ";
+            returnValue += " No conflict ";
         }
         return returnValue;
     }
