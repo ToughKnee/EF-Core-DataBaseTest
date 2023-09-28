@@ -14,31 +14,33 @@ public static class Functions
             {
                 Name = "AAA", Books = new List<Book>
                 {
-                    new Book {Title = "CONFLICT 1", PublicationYear = 1831},
-                    new Book {Title = "CONFLICT 1", PublicationYear = 213},
-                    new Book {Title = "CONFLICT 1", PublicationYear = 13}
+                    new Book {Title = "feat 1", PublicationYear = 121},
+                    new Book {Title = "feat 1", PublicationYear = 2219},
+                    new Book {Title = "feat 1", PublicationYear = 22},
+                    new Book {Title = "A feat 1", PublicationYear = 31}
                 }
             },
             new Author
             {
                 Name = "CCC", Books = new List<Book>
                 {
-                    new Book {Title = "CONFLICT 2C", PublicationYear = 9381},
-                    new Book {Title = "CONFLICT 2", PublicationYear = 200},
-                    new Book {Title = "CCONFLICT 2#", PublicationYear = 2200}
+                    new Book {Title = "feat2", PublicationYear = 981},
+                    new Book {Title = "feat2", PublicationYear = 30021},
+                    new Book {Title = "feat2", PublicationYear = 3200}
                 }
             }
         };
         return authors;
     }
 
-    public static string BooksToString(ICollection<Book> books)
+    public static string BooksToString(ICollection<Book> feat4)
     {
-        string returnValue = "";
-        foreach(Book book in books)
+        string returnValue = "feat3";
+        foreach(Book book in feat4)
         {
             returnValue += book.ToString();
-            returnValue += " --- ";
+            returnValue += "feat3";
+            returnValue += " No conflict ";
         }
         return returnValue;
     }
