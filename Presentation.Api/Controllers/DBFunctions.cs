@@ -33,10 +33,10 @@ public static class Functions
         return authors;
     }
 
-    public static string BooksToString(ICollection<Book> books)
+    public static string BooksToString(ICollection<Book> feat4)
     {
         string returnValue = "feat3";
-        foreach(Book book in books)
+        foreach(Book book in feat4)
         {
             returnValue += book.ToString();
             returnValue += "feat3";
