@@ -1,3 +1,0 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace CleanArchitectureWorkshop.Infrastructure;
