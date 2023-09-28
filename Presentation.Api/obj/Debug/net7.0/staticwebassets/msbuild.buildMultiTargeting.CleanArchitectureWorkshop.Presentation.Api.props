@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\CleanArchitectureWorkshop.Presentation.Api.props" />
-</Project>
