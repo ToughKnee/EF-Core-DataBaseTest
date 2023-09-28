@@ -39,7 +39,7 @@ public static class Functions
         foreach(Book book in feat4)
         {
             returnValue += book.ToString();
-            returnValue += "feat3";
+            returnValue += " FFFFFFFFFFFFF ";
             returnValue += " No conflict ";
         }
         return returnValue;
