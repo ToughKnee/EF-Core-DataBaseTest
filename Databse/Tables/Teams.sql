@@ -1,4 +1,0 @@
-﻿CREATE TABLE [dbo].[Teams]
-(
-	[TeamName] VARCHAR(30) NOT NULL PRIMARY KEY
-)

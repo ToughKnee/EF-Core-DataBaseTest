@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Player]
+(
+	[UserName] VARCHAR(30) NOT NULL PRIMARY KEY
+)
