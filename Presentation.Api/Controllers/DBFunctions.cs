@@ -16,7 +16,7 @@ public static class Functions
                 {
                     new Book {Title = "CONFLICT", PublicationYear = 121},
                     new Book {Title = "CON", PublicationYear = 2219},
-                    new Book {Title = "CONFLICT", PublicationYear = 22},
+                    new Book {Title = "NFLICT", PublicationYear = 22},
                     new Book {Title = "A feat 1", PublicationYear = 31}
                 }
             },
