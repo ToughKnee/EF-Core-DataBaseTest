@@ -15,7 +15,7 @@ public static class Functions
                 Name = "AAA", Books = new List<Book>
                 {
                     new Book {Title = "CONFLICT", PublicationYear = 121},
-                    new Book {Title = "CONFLICT", PublicationYear = 2219},
+                    new Book {Title = "", PublicationYear = 2219},
                     new Book {Title = "CONFLICT", PublicationYear = 22},
                     new Book {Title = "A feat 1", PublicationYear = 31}
                 }
