@@ -1,6 +1,4 @@
-﻿// using CleanArchitectureWorkshop.Domain.Core.Ids;
-
-namespace CleanArchitectureWorkshop.Domain.Core;
+﻿namespace CleanArchitectureWorkshop.Domain.Core;
 
 public abstract class AggregateRoot<TId> : Entity<TId>
     where TId : ValueObject

@@ -7,12 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <ProjectReference Include="..\Application\CleanArchitectureWorkshop.Application.csproj" />
+    <ProjectReference Include="..\Domain\CleanArchitectureWorkshop.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\CleanArchitectureWorkshop.Application.csproj" />
-    <ProjectReference Include="..\Domain\CleanArchitectureWorkshop.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
