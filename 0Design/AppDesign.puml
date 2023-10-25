@@ -1,0 +1,52 @@
+@startuml
+
+Skinparam backgroundColor #EEEBDC
+'skinparam componentStyle uml1
+skinparam linetype polyline
+'skinparam linetype ortho
+skinparam Nodesep 45
+'skinparam Ranksep 45
+skinparam component {
+ArrowColor Maroon
+BorderColor Maroon
+BackgroundColor  #fefece
+skinparam wrapWidth 450
+}
+'//===========================  Layout object, invisible object to maipualte the position of other objects
+skinparam package<<Layout>> {
+  borderColor Transparent
+  backgroundColor Transparent
+  fontColor Transparent
+  stereotypeFontColor Transparent
+}
+package layouter <<Layout>>
+package layouter2 <<Layout>>
+package layouter3 <<Layout>>
+'//====
+
+package Domain #dddddd {
+    package Core #aaaaaa {
+        [Entity]
+        [AggregateRoot]
+        [ValueObject]
+    }
+
+'note "" as NN
+
+    package CareerAggregate #c99 {
+        [Career\n---\n str name\n ] as Career
+        [Content] as Content
+    }
+}
+
+
+'//===========================  Connections
+'//=====  Domain
+[Entity] -0)- [AggregateRoot]
+ValueObject -0)- Entity : Gives 
+
+'//=====  CareerAggregate
+Content "1" -0)- "N" Career
+
+
+@enduml

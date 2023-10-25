@@ -1,0 +1,72 @@
+@startuml
+
+
+left to right direction    
+'skinparam componentStyle uml1
+'skinparam linetype polyline
+'skinparam linetype ortho
+skinparam Nodesep 45
+'skinparam Ranksep 45
+skinparam wrapWidth 450
+Skinparam backgroundColor #EEEBDC
+skinparam class {
+ArrowColor Maroon
+BorderColor Maroon
+BackgroundColor  #fefece
+ArrowThickness 2
+}
+
+'//===========================  Layout object, invisible object to maipualte the position of other objects
+skinparam class<<Layout>> {
+  borderColor Transparent
+  backgroundColor Transparent
+  fontColor Transparent
+  stereotypeFontColor Transparent
+}
+class layouter <<Layout>>
+'//====
+
+package Entities #d88 {
+
+    class Career {
+        -List<Content> Contents
+        +AddContent(contentType)
+    }
+
+    class Content {
+        +Career career
+    }
+}
+
+package ValueObjs #78d {
+
+    class ContentBody {
+        -string careerDescription
+    }
+
+    class CareerName {
+        -string careerName
+        -string initials
+    }
+
+    abstract class ValueObject {
+        +abstract IEnumerable<object?> **GetEqualityComponents**()
+    }
+}
+
+
+
+'//===========================  Connections
+'//=====  ValueObjects
+ContentBody -u|> ValueObject
+CareerName -u|> ValueObject
+ContentBody "1 " -* Content
+Career *- "1 " CareerName
+
+'Layout
+ContentBody -u[hidden]- CareerName
+
+'//=====  Entities
+Career "1" -- "N" Content : Has >
+
+@enduml
