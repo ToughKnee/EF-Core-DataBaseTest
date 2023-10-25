@@ -1,0 +1,134 @@
+@startuml
+'skinparam componentStyle uml1
+'skinparam linetype polyline
+'skinparam linetype ortho
+skinparam Nodesep 45
+'skinparam Ranksep 45
+'top to bottom direction
+'left to right direction
+skinparam wrapWidth 450
+Skinparam backgroundColor #EEEBDC
+skinparam class {
+ArrowColor Maroon
+BorderColor Maroon
+BackgroundColor  #fefece
+ArrowThickness 2
+}
+
+'//===========================  Layout object, invisible object to maipualte the position of other objects
+skinparam class<<Layout>> {
+  borderColor Transparent
+  backgroundColor Transparent
+  fontColor Transparent
+  stereotypeFontColor Transparent
+}
+
+class layouter <<Layout>>
+'//====
+
+'//===========================  PresentationUnity
+package PresentationUnity #ade {
+legend  right
+    =PositionablesManager
+    To use this script, just add it as a Unity Object to the **scene**
+    =EntityPresenter
+    To use this script, add it as a **component** to the intended 
+    Prefabs that will represent a true entity from the domain
+    =ObjPrefab
+    A prefab of the 3D Object, TODO: Can it be a mesh or a more complex object?
+end legend
+
+    package scripts #a9f {
+
+        class PositionablesManager<Script> {
+            +EntityPresenter ObjPrefab
+            Unity Prefab that will be instantiated **"N"** times according to the domain entities retrieved
+            -List<PositionableEntity> _entities
+            The entities that will represent the **retrieved entities from the API** as a collection, to then be read by the **manager** and mapped to each prefab
+            =TODO:
+            How do we set the **Dependency Injection** for ALL the managers to use the other layers?
+        }
+
+        class EntityPresenter<Script> {
+            ValueObejct ID
+
+            float positionX
+            float positionY
+            float positionZ
+
+            Setter(...)
+        }
+
+        class XLayerDependencyInjection<MonoBehavior> {
+            Contains the "Bind" ings to the interfaces and implementations
+        }
+
+    }
+
+    class ZenjectSceneContext {
+        -InfrastructureLayerDependencyI
+        -ApplicationLayerDependencyI
+    }
+
+    class OtherGameObjects{
+        Capsules
+        Spheres
+        Meshes
+        etc
+    }
+
+    class ObjPrefab {
+        +Transform
+        Modify the transform using the given values from the **EntityPresenter**
+
+    }
+
+}
+
+'//===========================  Application
+package Application #c99 {
+    class TerrainUseCases{
+        -ITerrainRepository _terrainRepository
+        +TerrainDto GetTerrainById(int id)
+    }
+    interface ITerrainUseCases
+
+    class IPositionableObjectsUseCases {
+            -positionableObjRepository _positionableRObjepository
+            +List<Team>> GetAllEntitiesAsync()
+    }
+}
+
+'//===========================  Infrastructure  
+note "This is where the **true entities** come from " as RepositoryNote
+package Infrastructure #778 {
+    class positionableObjRepository {
+        -ApiClient _apiClient
+        +=List<Team>> GetAllEntitiesAsync()
+    }
+
+
+}
+
+
+
+
+
+class ApiClient {
+    =Gets data from the Backend
+}
+
+'//===========================  Notes
+RepositoryNote --> positionableObjRepository
+
+'//=====  Presentation
+PositionablesManager "1" *-- "N" EntityPresenter : > Has
+EntityPresenter "1" *-- "N" OtherGameObjects : > May come from the instantiation
+EntityPresenter *-- ObjPrefab : Is a component of "ObjPrefab"\nModifies the "Transform" Component 
+
+'//=====  Execution Order
+PositionablesManager --> IPositionableObjectsUseCases #MediumOrchid : > Calls to get the **true entities**
+IPositionableObjectsUseCases --> positionableObjRepository #MediumOrchid : > Orchestrates the calls \nto Domain and **infrastructure**
+positionableObjRepository --> ApiClient #MediumOrchid : > Communicates with the \nAPI to get the **true entities**
+
+@enduml
